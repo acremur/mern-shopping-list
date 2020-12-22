@@ -25,7 +25,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "https://git.heroku.com/mern-shoplist.git",
+  "proxy": "https://mern-list.netlify.app",
   "eslintConfig": {
     "extends": [
       "react-app",
