@@ -3,9 +3,11 @@ import axios from 'axios'
 import { tokenConfig } from './authActions'
 import { returnErrors } from './errorActions'
 
+const baseURL = 'https://mern-shoplist.herokuapp.com/'
+
 export const getItems = () => dispatch => {
     dispatch(setItemsLoading())
-    axios.get('/api/items')
+    axios.get(`${baseURL}/api/items`)
         .then(res => (
             dispatch({
                 type: GET_ITEMS,
@@ -16,7 +18,7 @@ export const getItems = () => dispatch => {
 }
 
 export const deleteItem = id => (dispatch, getState) =>{
-    axios.delete(`/api/items/${id}`, tokenConfig(getState))
+    axios.delete(`${baseURL}/api/items/${id}`, tokenConfig(getState))
         .then(res => {
             dispatch({
                 type: DELETE_ITEM,
@@ -27,7 +29,7 @@ export const deleteItem = id => (dispatch, getState) =>{
 }
 
 export const addItem = item => (dispatch, getState) => {
-    axios.post('/api/items', item, tokenConfig(getState))
+    axios.post(`${baseURL}/api/items`, item, tokenConfig(getState))
         .then(res => dispatch({
             type: ADD_ITEM,
             payload: res.data
