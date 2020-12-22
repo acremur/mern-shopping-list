@@ -12,7 +12,7 @@ import {
     REGISTER_FAIL
 } from '../actions/types'
 
-const baseURL = 'https://mern-shoplist.herokuapp.com/'
+const baseURL = 'https://mern-shoplist.herokuapp.com'
 
 // Check token & load user
 export const loadUser = () => (dispatch, getState) => {

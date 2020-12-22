@@ -3,7 +3,7 @@ import axios from 'axios'
 import { tokenConfig } from './authActions'
 import { returnErrors } from './errorActions'
 
-const baseURL = 'https://mern-shoplist.herokuapp.com/'
+const baseURL = 'https://mern-shoplist.herokuapp.com'
 
 export const getItems = () => dispatch => {
     dispatch(setItemsLoading())
